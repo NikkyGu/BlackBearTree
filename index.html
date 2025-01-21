@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Bear Tree Service</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Optima', 'Segoe', 'Candara', sans-serif;;
+        }
+
+        .footer {
+            background-color: #FF570C;
+            color: #000;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .social-links {
+            margin: 10px 0;
+        }
+
+        .footer .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .footer .privacy-policy {
+            margin-top: 15px;
+        }
+
+
+         .contact-section {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideUp 1s ease-out;
+            background-color: #ffffff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000000;
+            animation: popIn 1s ease-out;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-section label {
+            margin-bottom: 8px;
+            color: #000000;
+        }
+
+        .contact-section input,
+        .contact-section select,
+        .contact-section button {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .contact-section input:focus,
+        .contact-section select:focus {
+            outline: none;
+            border-color: #000000;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+
+        .contact-section button {
+            background-color: #FF570C;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-section button:hover {
+            background-color: #000000;
+            transform: translateY(-2px);
+        }
+
+
+
+
+
+         .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #FF570C;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            padding: 5px 80px;
+           z-index: 1000;
+        }
+
+        .navbar .logo {
+            margin-right: auto;
+        }
+
+        .navbar .logo img {
+            height: 75px;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 5px 40px;
+            display: block;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ffffff;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #FF570C;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1100;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #000000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        .hero {
+            position: relative;
+            background-image: url('https://i.ibb.co/ysvYKKJ/IMG-0229.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: slideUp 2s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+           
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #FF570C;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            animation: pulse 2s infinite;
+        }
+
+        .hero button:hover {
+            background-color: #000000  ;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 5px #FF570C, 0 0 10px #FF570C, 0 0 20px #FF570C;
+            }
+            to {
+                text-shadow: 0 0 20px #FF570C, 0 0 30px #FF570C, 0 0 40px #FF570C;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+         .services-section {
+            padding: 0px 0;
+        }
+
+        .services-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            color: #000000;
+        }
+
+        .service {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            color: black;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .service:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service:nth-child(2) {
+            background-color: #F0F0F0;
+            flex-direction: row;
+        }
+
+        .service:nth-child(3) {
+            background-color: #ffffff;
+            flex-direction: row-reverse;
+        }
+
+        .service:nth-child(4) {
+            background-color: #F0F0F0;
+            flex-direction: row;
+        }
+
+        .service:nth-child(5) {
+            background-color: #ffffff;
+            flex-direction: row-reverse;
+        }
+
+        .service:nth-child(6) {
+            background-color: #F0F0F0;
+            flex-direction: row;
+        }
+
+        .service:nth-child(7) {
+            background-color: #ffffff;
+            flex-direction: row-reverse;
+        }
+
+        .service:nth-child(8) {
+            background-color: #F0F0F0;
+            flex-direction: row;
+        }
+
+        .service img {
+            width: 40%;
+            max-width: 400px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: slideInLeft 1s ease;
+            transition: transform 0.3s ease;
+        }
+
+        .service:hover img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            flex: 1;
+            animation: slideInRight 1s ease;
+        }
+
+        .service-content h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .service-content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+
+        @media (min-width: 769px) {
+                .service {
+                gap: 60px;
+            }
+
+            .service img {
+                height: 300px;
+                max-width: 500px;
+            }
+        }
+
+
+        
+         .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 40px;
+            background-color: #FF570C;
+            gap: 20px;
+            overflow: hidden;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 400px;
+            max-width: 600px;
+            animation: fadeInLeft 1.5s ease-in-out;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-height: 450px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            animation: fadeInRight 1.5s ease-in-out;
+        }
+
+        .about-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .about-content p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .about-content button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #000000;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .about-content button:hover {
+            background-color: #e64a19;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .choose-us-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 50px;
+            background-color: #f9f9f9;
+            text-align: center;
+            flex-wrap: wrap;
+            animation: fadeInSection 1.5s ease-in-out;
+        }
+
+        .choose-us-content {
+            flex: 1;
+            max-width: 600px;
+            text-align: left;
+            animation: fadeInLeft 1s ease;
+        }
+
+        .choose-us-content h2 {
+            font-size: 2.5em;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .choose-us-content p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .choose-us-content button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #ff5722;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: buttonBounce 2s infinite ease-in-out;
+        }
+
+        .choose-us-content button:hover {
+            background-color: #000000;
+            transform: scale(1.1);
+        }
+
+        .choose-us-image {
+            flex: 1;
+            max-width: 600px;
+            animation: fadeInRight 1s ease;
+        }
+
+        .choose-us-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .choose-us-image img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes buttonBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .video-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 70px;
+            background-color: #FF570C;
+            flex-wrap: wrap;
+        }
+
+        .video-container {
+            flex: 1;
+            max-width: 600px;
+            animation: fadeInLeft 1s ease;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-container video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .description-container {
+            flex: 1;
+            max-width: 600px;
+            text-align: left;
+            animation: fadeInRight 1s ease;
+        }
+
+        .description-container h2 {
+            font-size: 2.5em;
+            color: #000000;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .description-container h2:hover {
+            color: #ffffff;
+        }
+
+        .description-container p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #000000;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .description-container p:hover {
+            color: #ffffff;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .video-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 70px;
+            background-color: #FF570C;
+            flex-wrap: wrap;
+        }
+
+        .video-container {
+            flex: 1;
+            max-width: 600px;
+            animation: fadeInLeft 1s ease;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-container iframe:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .description-container {
+            flex: 1;
+            max-width: 600px;
+            text-align: left;
+            animation: fadeInRight 1s ease;
+        }
+
+        .description-container h2 {
+            font-size: 2.5em;
+            color: #000000;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .description-container h2:hover {
+            color: #ffffff;
+        }
+
+        .description-container p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #000000;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .description-container p:hover {
+            color: #000000;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+             @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+             }
+       
+        
+        }
+
+
+
+
+
+
+
+
+        /* Responsive Design  Iphone*/
+        @media (max-width: 769px) {
+             
+             .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #FF570C;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            padding: 0 0px;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            margin-right: auto;
+        }
+
+        .navbar .logo img {
+            height: 55px;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 14px 12px;
+            display: block;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ffffff;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #000000;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1100;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 10px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+             
+             .hero {
+            position: relative;
+            background-image: url('https://i.ibb.co/ysvYKKJ/IMG-0229.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .service {
+                flex-direction: column !important;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .service img {
+                width: 80%;
+                margin: 0 auto 10px;
+            }
+
+        .service:hover {
+            transform: scale(1);
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
+        }
+           
+           
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            background-color: #FF570C;
+            gap: 20px;
+            overflow: hidden;
+        }
+
+        .about-image {
+            flex: 5;
+            min-width: 200px;
+            max-width: 400px;
+            animation: fadeInLeft 1.5s ease-in-out;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            animation: fadeInRight 1.5s ease-in-out;
+        }
+
+        .about-content h2 {
+            font-size: 2.0em;
+            margin-bottom: 30px;
+            color: #000000;
+        }
+
+        .about-content p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .about-content button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #000000  ;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .about-content button:hover {
+            background-color: #e64a19;
+        }
+        .choose-us-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 50px;
+                padding-left: 5px; /* Adds 20px of space to the left */
+                padding-right: 5px;
+              
+            }
+
+            .choose-us-image {
+                order: -1;
+            }
+
+            .choose-us-image img {
+                width: 80%;
+                max-width: 100%;
+                margin: 0 auto 0px;
+            }
+
+            .choose-us-content {
+                text-align: left;
+                padding: 0px 10px;
+            }
+
+            .video-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .video-container {
+                order: -1;
+            }
+
+            .video-container video {
+                width: 100%;
+                margin-left: -5%;
+            }
+
+            .description-container {
+                text-align: left;
+                padding: 0 10px;
+            }
+            .video-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+                top-margin: 0px;
+            }
+
+            .video-container {
+                order: -1;
+            }
+
+            .video-container iframe {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .description-container {
+                text-align: left;
+                padding: 0 10px;
+            }
+            .contact-section {
+                max-width: 100%;
+                margin: 10px;
+                padding: 15px;
+            }
+            .footer {
+                font-size: 12px;
+                padding: 15px 5px;
+            }
+
+            .footer .social-links a {
+                font-size: 14px;
+            }
+
+            .footer .privacy-policy {
+                font-size: 12px;
+            }
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html" class="logo">
+            <img src="https://i.ibb.co/3BYZdj1/black-bear-tree-services-logo-222w-png-processed.png" alt="My Logo">
+        </a>
+        <div class="dropdown">
+            <a href="#services" class="dropbtn">Services</a>
+            <div class="dropdown-content">
+                <a href="tree-Removal.html">Tree Removal</a>
+                <a href="Tree-Trimming.html">Tree Trimming</a>
+                <a href="Stump-Grinding.html">Stump Grinding</a>
+                <a href="Emergency.html">Emergency Storm Damage</a>
+                <a href="firewood.html">Firewood</a>
+                <a href="Snow-removal.html">Snow Removal</a>
+                <a href="Landscaping.html">LandScaping</a>
+            </div>
+        </div>
+        <a href="About-Us.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        
+    </div>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Expert Tree Service's</h1>
+            <p>Bergen County, NJ</p>
+            <button onclick="location.href='Free-Estimate.html'">Free Estimate</button>
+        </div>
+    </div>
+
+ <section class="services-section">
+    <h2>Black Bear Tree Services</h2>
+
+    <div class="service">
+        <img src="https://i.ibb.co/bvfKzym/8-C3-F4317-AA27-41-E8-A75-B-900-EBD997-A2-D.jpg" alt="Service 1">
+        <div class="service-content">
+            <h3>Tree Removal</h3>
+            <p>Professional tree removal ensures the safety of your property and enhances its overall appearance, preventing potential damage from dead or hazardous trees. Trust our expert team for efficient and careful tree removal services that prioritize your landscape’s beauty and your peace of mind.</p>
+        </div>
+    </div>
+
+    <div class="service">
+        <img src="https://i.ibb.co/G0kPwk1/IMG-8188.jpg" alt="Service 2">
+        <div class="service-content">
+            <h3>Tree Trimming</h3>
+            <p>Regular tree trimming not only boosts the health and growth of your trees but also enhances the beauty and safety of your property. Let our skilled team provide precise and professional trimming services that keep your trees vibrant and your home secure.</p>
+        </div>
+    </div>
+
+    <div class="service">
+        <img src="https://i.ibb.co/FgZJSmY/IMG-9066.jpg" alt="Service 3">
+        <div class="service-content">
+            <h3>Stump Grinding</h3>
+            <p>Stump grinding removes unsightly stumps, freeing up space and preventing tripping hazards or pest infestations in your yard. Rely on our expert stump grinding services for a clean, safe, and beautiful landscape without the hassle.</p>
+        </div>
+    </div>
+
+    <div class="service">
+        <img src="https://i.ibb.co/C5wdFnT/IMG-9720.jpg" alt="Service 4">
+        <div class="service-content">
+            <h3>Emergency Storm Damage</h3>
+            <p>When unexpected storm damage strikes, fast and reliable cleanup is crucial to restore safety and order to your property. Count on our emergency storm damage services for prompt response and expert care to minimize stress and protect your home.</p>
+        </div>
+    </div>
+
+    <div class="service">
+        <img src="https://i.ibb.co/2K67NvK/IMG-8358.jpg" alt="Service 5">
+        <div class="service-content">
+            <h3>Firewood</h3>
+            <p>High-quality firewood ensures longer, cleaner, and more efficient burns to keep your home warm and cozy. Choose our seasoned firewood for reliable, eco-friendly heating that adds comfort to your home all season long.</p>
+        </div>
+    </div>
+
+    <div class="service">
+        <img src="https://i.ibb.co/ZKhPxx2/IMG-0342.jpg" alt="Service 6">
+        <div class="service-content">
+            <h3>Snow Removal</h3>
+            <p>Timely and professional snow removal keeps your property safe and accessible, preventing accidents and disruptions during winter weather. Trust our efficient snow removal services to clear your paths and driveways quickly, so you can carry on with your day stress-free.</p>
+        </div>
+    </div>
+
+    <div class="service">
+        <img src="https://i.ibb.co/X2hG7SY/IMG-5537.jpg" alt="Service 7">
+        <div class="service-content">
+            <h3>LandScaping</h3>
+            <p>Expert landscaping services transform your outdoor space into a beautiful and functional area that enhances your property's value and appeal. Let our team create and maintain a stunning landscape that reflects your vision and makes your home the envy of the neighborhood.</p>
+        </div>
+    </div>
+
+</section>
+<section class="about-section">
+    <div class="about-image">
+        <img src="https://i.ibb.co/9YMYrBL/IMG-7991.jpg" alt="About Us">
+    </div>
+    <div class="about-content">
+        <h2>About Us</h2>
+        <p>
+           We are committed to providing exceptional services with a focus on innovation, sustainability, and integrity. Our dedicated team works tirelessly to bring you the best possible results, ensuring that every project is handled with care and precision.
+        </p>
+        <p>
+            With a passionate team and a commitment to excellence, we strive to make a positive impact
+            in the world through our work. Join us on this exciting journey!
+        </p>
+       <button onclick="location.href='About-Us.html'">More Info</button>
+    </div>
+</section>
+<section class="choose-us-section">
+    <div class="choose-us-content">
+        <h2>Why Choose Us?</h2>
+        <p>Choose our tree company for professional, reliable, and exceptional service. Our certified arborists deliver expert tree care, from removal and pruning to stump grinding and storm damage assistance, using safe and efficient techniques.</p>
+        <p>We prioritize customer satisfaction with tailored services, competitive pricing, and a commitment to enhancing your property’s beauty and value. Trust us to care for your trees like our own. We have 25 years of experiance. </p>
+       <button onclick="location.href='Gallery.html'">Explore Gallery</button>
+    </div>
+    <div class="choose-us-image">
+        <img src="https://i.ibb.co/3ywxHPK/IMG-8189.jpg" alt="Why Choose Us">
+    </div>
+</section>
+<section class="video-section">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/9HR7q7piD9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="description-container">
+        <h2>Watch Our Story</h2>
+        <p>Watch our team in action as we provide expert tree removal, trimming, and landscaping services. Our professional approach ensures safety, efficiency, and quality for your property.</p>
+        <p>Join us as we continue to create solutions that make a difference and help shape a better future.</p>
+    </div>
+</section>
+<section class="contact-section">
+        <h2>Contact Us</h2>
+        <form action="mailto:eusebio@blackbeartreeservices.com" method="post" enctype="text/plain">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="service">Service Needed</label>
+            <select id="service" name="service" required>
+                <option value="">--Select a Service--</option>
+                <option value="tree_removal">Tree Removal</option>
+                <option value="tree_cutting">Tree Cutting</option>
+                <option value="stump_grinding">Stump Grinding</option>
+                <option value="firewood">Firewood</option>
+                <option value="landscaping">Landscaping</option>
+                <option value="snow_removal">Snow Removal</option>
+                <option value="emergency_storm_damage">Emergency Storm Damage</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <footer class="footer">
+        <p>Contact Us</p>
+        <p>Email: <a href="mailto:eusebio@blackbeartreeservices.com">eusebio@blackbeartreeservices.com</a></p>
+        <p>Phone: <a href="tel:+15518047603">+1 (551) 804-7603</a></p>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/blackbeartreeservices/">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61557387519278" target="_blank">Facebook</a>
+        </div>
+
+        <div class="privacy-policy">
+            <a href="Privacy-Policy.html">Privacy Policy</a>
+        </div>
+    </footer>
+</body>
+</html>
