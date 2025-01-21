@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tree Removal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Optima', 'Segoe', 'Candara', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+          .footer {
+            background-color: #FF570C;
+            color: #000;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .social-links {
+            margin: 10px 0;
+        }
+
+        .footer .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .footer .privacy-policy {
+            margin-top: 15px;
+        }
+        
+        
+         body {
+            margin: 0;
+            font-family: 'Optima', 'Segoe', 'Candara', sans-serif;
+        }
+    
+          .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #FF570C;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            padding: 5px 80px;
+           z-index: 1000;
+        }
+
+        .navbar .logo {
+            margin-right: auto;
+        }
+
+        .navbar .logo img {
+            height: 75px;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 5px 40px;
+            display: block;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ffffff;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #FF570C;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1100;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #000000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        .hero {
+            position: relative;
+            background-image: url('https://i.ibb.co/fv8RpTF/IMG-9720.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: slideUp 2s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+           
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #FF570C;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            animation: pulse 2s infinite;
+        }
+
+        .hero button:hover {
+            background-color: #000000  ;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 5px #FF570C, 0 0 10px #FF570C, 0 0 20px #FF570C;
+            }
+            to {
+                text-shadow: 0 0 20px #FF570C, 0 0 30px #FF570C, 0 0 40px #FF570C;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .service-section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .service-section h2 {
+            font-size: 2.5em;
+            color: #FF570C;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .service-content, .alternate-section {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            animation: slideIn 1.2s ease-out;
+        }
+
+        .service-content {
+            flex-direction: row;
+        }
+
+        .alternate-section {
+            flex-direction: row-reverse;
+        }
+
+        .service-content img, .alternate-section img {
+            margin: 30px;
+            flex: 1;
+            max-width: 50%;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .service-content img:hover, .alternate-section img:hover {
+            transform: scale(1.05);
+        }
+
+        .service-description {
+            flex: 1;
+            padding: 0 15px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .service-description h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .service-description p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .estimate-section {
+            margin-top: 40px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .estimate-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #FF570C;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s ease;
+        }
+
+        .estimate-button:hover {
+            background-color: #000000;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-content, .alternate-section {
+               flex-direction: column-reverse;
+                text-align: left;
+            }
+
+            .service-content img, .alternate-section img {
+                max-width: 100%;
+                aspect-ratio: 15 / 10;
+            }
+
+            .service-description {
+                max-width: 100%;
+                padding: 0;
+            }
+              .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #FF570C;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            padding: 0 0px;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            margin-right: auto;
+        }
+
+        .navbar .logo img {
+            height: 55px;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 14px 12px;
+            display: block;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ffffff;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #000000;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1100;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 10px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+             
+             .hero {
+            position: relative;
+            background-image: url('https://i.ibb.co/fv8RpTF/IMG-9720.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+         .service-content img, .alternate-section img {
+            margin: 0px;
+            
+        }
+         .service-content img:hover, .alternate-section img:hover {
+            transform: scale(1.0);
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html" class="logo">
+            <img src="https://i.ibb.co/3BYZdj1/black-bear-tree-services-logo-222w-png-processed.png" alt="My Logo">
+        </a>
+        <div class="dropdown">
+            <a href="#services" class="dropbtn">Services</a>
+            <div class="dropdown-content">
+                <a href="tree-Removal.html">Tree Removal</a>
+                <a href="Tree-Trimming.html">Tree Trimming</a>
+                <a href="Stump-Grinding.html">Stump Grinding</a>
+                <a href="Emergency.html">Emergency Storm Damage</a>
+                <a href="firewood.html">Firewood</a>
+                <a href="Snow-removal.html">Snow Removal</a>
+                <a href="Landscaping.html">LandScaping</a>
+            </div>
+        </div>
+        <a href="About-Us.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        
+    </div>
+     <div class="hero">
+        <div class="hero-content">
+            <h1>Emergency Storm Damage</h1>
+            <p>Bergen County, NJ</p>
+            <button onclick="location.href='Free-Estimate.html'">Free Estimate</button>
+        </div>
+    </div>
+
+
+<div class="service-section">
+    <div class="service-content">
+        <img src="https://i.ibb.co/FYRcsFD/IMG-9723.jpg" alt="Tree Removal">
+        <div class="service-description">
+            <h3>Our Storm Damage Process</h3>
+            <p>When severe weather hits, it can leave trees damaged and dangerous. Our professional emergency storm damage services help restore safety and order to your property quickly.</p>
+            <p>We provide immediate response services to assess and remove fallen or damaged trees safely. Our expert team is equipped with specialized tools to handle any emergency situation efficiently and effectively.</p>
+        </div>
+    </div>
+    <div class="alternate-section">
+        <img src="https://i.ibb.co/0FTQ1J8/IMG-9721.jpg" alt="Expert Tree Removal">
+        <div class="service-description">
+            <h3>Stump Grinding Benefits</h3>
+            <p>Emergency storm damage to trees can pose significant risks to both property and safety. High winds, heavy rain, snow, and ice can break branches, uproot trees, or leave them leaning precariously, creating immediate hazards. Fallen trees can damage homes, vehicles, power lines, and other structures, requiring urgent attention. </p>
+            <p>Prompt storm damage response not only minimizes these dangers but also prevents further complications, such as secondary falls or pest infestations in weakened trees. Professional tree services assess the damage, safely remove hazardous debris, and stabilize affected trees, restoring safety and order to your property. Acting quickly after a storm is essential to protect your landscape and ensure peace of mind.</p>
+        </div>
+    </div>
+
+    <div class="estimate-section">
+        <h3>Request a Free Estimate</h3>
+        <p>Ready to get started? Fill out our form below to request a free estimate for Emergency Storm services.</p>
+        <a href="Free-Estimate.html" class="estimate-button">Request a Free Estimate</a>
+    </div>
+</div>
+<footer class="footer">
+        <p>Contact Us</p>
+        <p>Email: <a href="mailto:eusebio@blackbeartreeservices.com">eusebio@blackbeartreeservices.com</a></p>
+        <p>Phone: <a href="tel:+15518047603">+1 (551) 804-7603</a></p>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/blackbeartreeservices/">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61557387519278" target="_blank">Facebook</a>
+        </div>
+
+        <div class="privacy-policy">
+            <a href="Privacy-Policy.html">Privacy Policy</a>
+        </div>
+    </footer>
+</body>
+</html>
